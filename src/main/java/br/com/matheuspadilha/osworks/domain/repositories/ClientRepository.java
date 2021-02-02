@@ -1,6 +1,6 @@
-package br.com.matheuspadilha.osworksapi.domain.repositories;
+package br.com.matheuspadilha.osworks.domain.repositories;
 
-import br.com.matheuspadilha.osworksapi.domain.models.Client;
+import br.com.matheuspadilha.osworks.domain.models.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

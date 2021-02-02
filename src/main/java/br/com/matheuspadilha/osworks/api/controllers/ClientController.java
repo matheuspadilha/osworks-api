@@ -1,8 +1,8 @@
-package br.com.matheuspadilha.osworksapi.controllers;
+package br.com.matheuspadilha.osworks.api.controllers;
 
-import br.com.matheuspadilha.osworksapi.domain.models.Client;
-import br.com.matheuspadilha.osworksapi.domain.repositories.ClientRepository;
-import br.com.matheuspadilha.osworksapi.domain.services.ClientService;
+import br.com.matheuspadilha.osworks.domain.models.Client;
+import br.com.matheuspadilha.osworks.domain.repositories.ClientRepository;
+import br.com.matheuspadilha.osworks.domain.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

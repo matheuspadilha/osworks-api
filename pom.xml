@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.matheuspadilha</groupId>
-    <artifactId>osworks-api</artifactId>
+    <artifactId>osworks</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>osworks-api</name>
+    <name>osworks</name>
     <description>API do OSWorks</description>
 
     <properties>

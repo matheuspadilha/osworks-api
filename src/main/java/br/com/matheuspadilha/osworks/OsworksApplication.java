@@ -1,13 +1,13 @@
-package br.com.matheuspadilha.osworksapi;
+package br.com.matheuspadilha.osworks;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OsworksApiApplication {
+public class OsworksApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OsworksApiApplication.class, args);
+        SpringApplication.run(OsworksApplication.class, args);
     }
 
 }

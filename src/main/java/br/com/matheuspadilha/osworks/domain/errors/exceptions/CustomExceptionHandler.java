@@ -1,7 +1,6 @@
-package br.com.matheuspadilha.osworksapi.errors.exceptions;
+package br.com.matheuspadilha.osworks.domain.errors.exceptions;
 
-import br.com.matheuspadilha.osworksapi.errors.custom.StandardError;
-import br.com.matheuspadilha.osworksapi.errors.custom.ValidationError;
+import br.com.matheuspadilha.osworks.domain.errors.custom.ValidationError;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {

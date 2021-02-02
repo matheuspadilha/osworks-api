@@ -1,4 +1,4 @@
-package br.com.matheuspadilha.osworksapi.errors.custom;
+package br.com.matheuspadilha.osworks.domain.errors.custom;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

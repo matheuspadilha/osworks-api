@@ -1,12 +1,10 @@
-package br.com.matheuspadilha.osworksapi.domain.services;
+package br.com.matheuspadilha.osworks.domain.services;
 
-import br.com.matheuspadilha.osworksapi.domain.models.Client;
-import br.com.matheuspadilha.osworksapi.domain.repositories.ClientRepository;
-import br.com.matheuspadilha.osworksapi.errors.exceptions.BusinessException;
+import br.com.matheuspadilha.osworks.domain.models.Client;
+import br.com.matheuspadilha.osworks.domain.repositories.ClientRepository;
+import br.com.matheuspadilha.osworks.domain.errors.exceptions.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ClientService {

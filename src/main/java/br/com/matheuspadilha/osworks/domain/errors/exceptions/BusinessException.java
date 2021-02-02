@@ -1,4 +1,4 @@
-package br.com.matheuspadilha.osworksapi.errors.exceptions;
+package br.com.matheuspadilha.osworks.domain.errors.exceptions;
 
 public class BusinessException extends RuntimeException {
     

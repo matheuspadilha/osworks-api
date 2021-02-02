@@ -1,4 +1,4 @@
-package br.com.matheuspadilha.osworksapi.domain.models;
+package br.com.matheuspadilha.osworks.domain.models;
 
 import lombok.Getter;
 import lombok.Setter;
