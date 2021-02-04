@@ -12,12 +12,14 @@ import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.time.OffsetDateTime;
+
 @ControllerAdvice
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        ValidationError error = new ValidationError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(),
+        ValidationError error = new ValidationError(OffsetDateTime.now(), HttpStatus.BAD_REQUEST.value(),
                 "Error validation", ((ServletWebRequest) request).getRequest().getRequestURI());
     
         for (FieldError fieldError : ex.getBindingResult().getFieldErrors()) {
@@ -31,8 +33,8 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleBusiness(BusinessException ex, WebRequest request) {
         var status = HttpStatus.BAD_REQUEST;
         
-        ValidationError error = new ValidationError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(),
-                "E-mail verification error", ((ServletWebRequest) request).getRequest().getRequestURI());
+        ValidationError error = new ValidationError(OffsetDateTime.now(), HttpStatus.BAD_REQUEST.value(),
+                "Error verification", ((ServletWebRequest) request).getRequest().getRequestURI());
         
         error.addError(null, ex.getMessage());
     

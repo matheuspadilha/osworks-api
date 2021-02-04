@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.OffsetDateTime;
 import java.util.Map;
 
 @Data
@@ -16,23 +17,23 @@ public class StandardError implements Serializable {
     
     private static final long serialVersionUID = 3404978768945267283L;
     
-    private Long timeStamp;
+    private OffsetDateTime dateTime;
     private Integer status;
     private String error;
     private String message;
     private String path;
     private Map<String, Object> map;
     
-    public StandardError(Long timeStamp, Integer status, String error, String message, String path){
-        this.timeStamp = timeStamp;
+    public StandardError(OffsetDateTime dateTime, Integer status, String error, String message, String path){
+        this.dateTime = dateTime;
         this.status = status;
         this.error = error;
         this.message = message;
         this.path = path;
     }
     
-    public StandardError(Long timeStamp, Integer status, String error, String path){
-        this.timeStamp = timeStamp;
+    public StandardError(OffsetDateTime dateTime, Integer status, String error, String path){
+        this.dateTime = dateTime;
         this.status = status;
         this.error = error;
         this.path = path;
