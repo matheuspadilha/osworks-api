@@ -1,4 +1,4 @@
-package br.com.matheuspadilha.osworks.api.model;
+package br.com.matheuspadilha.osworks.api.models;
 
 import br.com.matheuspadilha.osworks.domain.models.StatusOrderService;
 import lombok.Getter;

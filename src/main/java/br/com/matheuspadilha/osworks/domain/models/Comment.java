@@ -4,42 +4,30 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Getter
 @Setter
 @Entity
-public class OrderService {
+public class Comment {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @ManyToOne
-    private Client client;
+    private OrderService orderService;
     
     private String description;
-    private BigDecimal price;
-    
-    @Enumerated(EnumType.STRING)
-    private StatusOrderService status;
-    
-    private OffsetDateTime openingDate;
-    private OffsetDateTime closingDate;
-    
-    @OneToMany(mappedBy = "orderService")
-    private List<Comment> comments = new ArrayList<>();
+    private OffsetDateTime sendDate;
     
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrderService that = (OrderService) o;
-        return id.equals(that.id);
+        Comment comment = (Comment) o;
+        return id.equals(comment.id);
     }
     
     @Override

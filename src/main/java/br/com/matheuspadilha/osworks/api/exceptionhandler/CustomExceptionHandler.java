@@ -1,6 +1,8 @@
-package br.com.matheuspadilha.osworks.domain.errors.exceptions;
+package br.com.matheuspadilha.osworks.api.exceptionhandler;
 
 import br.com.matheuspadilha.osworks.domain.errors.custom.ValidationError;
+import br.com.matheuspadilha.osworks.domain.errors.exceptions.BusinessException;
+import br.com.matheuspadilha.osworks.domain.errors.exceptions.EntityNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +40,18 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         
         error.addError(null, ex.getMessage());
     
+        return super.handleExceptionInternal(ex, error, new HttpHeaders(), status, request);
+    }
+    
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<Object> handleBusiness(EntityNotFoundException ex, WebRequest request) {
+        var status = HttpStatus.NOT_FOUND;
+        
+        ValidationError error = new ValidationError(OffsetDateTime.now(), HttpStatus.BAD_REQUEST.value(),
+                "Error verification", ((ServletWebRequest) request).getRequest().getRequestURI());
+        
+        error.addError(null, ex.getMessage());
+        
         return super.handleExceptionInternal(ex, error, new HttpHeaders(), status, request);
     }
 }

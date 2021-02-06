@@ -1,7 +1,7 @@
 package br.com.matheuspadilha.osworks.api.controllers;
 
-import br.com.matheuspadilha.osworks.api.model.OrderServiceInput;
-import br.com.matheuspadilha.osworks.api.model.OrderServiceModel;
+import br.com.matheuspadilha.osworks.api.models.OrderServiceInput;
+import br.com.matheuspadilha.osworks.api.models.OrderServiceModel;
 import br.com.matheuspadilha.osworks.domain.models.OrderService;
 import br.com.matheuspadilha.osworks.domain.repositories.OrderServiceRepository;
 import br.com.matheuspadilha.osworks.domain.services.ManagementOrdersService;
