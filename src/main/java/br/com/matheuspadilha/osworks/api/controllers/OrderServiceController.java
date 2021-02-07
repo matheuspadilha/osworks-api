@@ -54,6 +54,13 @@ public class OrderServiceController {
         return ResponseEntity.notFound().build();
     }
     
+    @PutMapping("/{orderServiceId}/finished")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void finished(@PathVariable Long orderServiceId) {
+        managementOrdersService.finished(orderServiceId);
+        
+    }
+    
     private OrderServiceModel toModel(OrderService orderService) {
         return modelMapper.map(orderService, OrderServiceModel.class);
     }

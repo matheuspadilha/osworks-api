@@ -1,5 +1,6 @@
 package br.com.matheuspadilha.osworks.domain.models;
 
+import br.com.matheuspadilha.osworks.domain.errors.exceptions.BusinessException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -45,5 +46,22 @@ public class OrderService {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+    
+    public boolean canBeFinalized() {
+        return StatusOrderService.OPEN.equals(getStatus());
+    }
+    
+    public boolean notCanBeFinalized() {
+        return !canBeFinalized();
+    }
+    
+    public void finish() {
+        if (notCanBeFinalized()) {
+            throw new BusinessException("Order service not finished.");
+        }
+        
+        setStatus(StatusOrderService.FINISHED);
+        setClosingDate(OffsetDateTime.now());
     }
 }

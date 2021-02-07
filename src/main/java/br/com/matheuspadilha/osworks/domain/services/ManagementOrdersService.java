@@ -36,9 +36,16 @@ public class ManagementOrdersService {
         return orderServiceRepository.save(orderService);
     }
     
+    public void finished(Long orderServiceId) {
+        OrderService orderService = getOrderService(orderServiceId);
+        
+        orderService.finish();
+        
+        orderServiceRepository.save(orderService);
+    }
+    
     public Comment addComment(Long orderServiceId, String description) {
-        OrderService orderService = orderServiceRepository.findById(orderServiceId)
-                .orElseThrow(() -> new BusinessException("Order service not found."));
+        OrderService orderService = getOrderService(orderServiceId);
         
         Comment comment = new Comment();
         comment.setSendDate(OffsetDateTime.now());
@@ -46,5 +53,10 @@ public class ManagementOrdersService {
         comment.setOrderService(orderService);
         
         return commentRespository.save(comment);
+    }
+    
+    private OrderService getOrderService(Long orderServiceId) {
+        return orderServiceRepository.findById(orderServiceId)
+                .orElseThrow(() -> new BusinessException("Order service not found."));
     }
 }
